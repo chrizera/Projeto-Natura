@@ -27,6 +27,7 @@
 		4EEA080E1F64CA9A003FA291 /* CorCabeloDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA080D1F64CA9A003FA291 /* CorCabeloDataSource.swift */; };
 		4EEA08101F64CD03003FA291 /* TexturaCabeloDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA080F1F64CD03003FA291 /* TexturaCabeloDataSource.swift */; };
 		4EEA08121F64D1DA003FA291 /* EstruturaCabeloDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEA08111F64D1DA003FA291 /* EstruturaCabeloDataSource.swift */; };
+		4EEDF5F51F77771C0035048F /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEDF5F41F77771C0035048F /* SiteViewController.swift */; };
 		ACA9E57A1F3620010089F102 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9E5791F3620010089F102 /* RatingControl.swift */; };
 		ACA9E57C1F36301D0089F102 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9E57B1F36301D0089F102 /* Produto.swift */; };
 		ACA9E57F1F3632530089F102 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA9E57E1F3632530089F102 /* Usuario.swift */; };
@@ -55,6 +56,7 @@
 		4EEA080D1F64CA9A003FA291 /* CorCabeloDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorCabeloDataSource.swift; sourceTree = "<group>"; };
 		4EEA080F1F64CD03003FA291 /* TexturaCabeloDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturaCabeloDataSource.swift; sourceTree = "<group>"; };
 		4EEA08111F64D1DA003FA291 /* EstruturaCabeloDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EstruturaCabeloDataSource.swift; sourceTree = "<group>"; };
+		4EEDF5F41F77771C0035048F /* SiteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
 		ACA9E5791F3620010089F102 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		ACA9E57B1F36301D0089F102 /* Produto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		ACA9E57E1F3632530089F102 /* Usuario.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				4E8C54AC1F2E7F0E00CA4637 /* PreferenciasViewController.swift */,
 				4E8C54AA1F2E7D1500CA4637 /* PerfilViewController.swift */,
 				4E8C54A81F2E795300CA4637 /* ProdutoViewController.swift */,
+				4EEDF5F41F77771C0035048F /* SiteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				4E6B81CA1F61E2C400E6A00E /* ProdutoTableViewCell.swift in Sources */,
 				4EEA08061F64BDCF003FA291 /* TipoPeleDataSource.swift in Sources */,
 				ACA9E57A1F3620010089F102 /* RatingControl.swift in Sources */,
+				4EEDF5F51F77771C0035048F /* SiteViewController.swift in Sources */,
 				4E8C54AF1F2E84EC00CA4637 /* ConsultoriaViewController.swift in Sources */,
 				4E8A18201F7764FF002E0FC1 /* Preferencias.swift in Sources */,
 				4EC9F3481F257883001879A5 /* ListaProdutoTableViewController.swift in Sources */,

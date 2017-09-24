@@ -16,6 +16,7 @@ class ListaProdutoTableViewController: UITableViewController {
     var preco = 0.0
     var descricao = ""
     var foto: UIImage?
+    var url = ""
 
     
     override func viewDidLoad() {
@@ -85,6 +86,7 @@ class ListaProdutoTableViewController: UITableViewController {
         quantidade = produto.quantidade
         preco = produto.preco
         descricao = produto.descricao
+        url = produto.link
         
        performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
     }
@@ -102,6 +104,7 @@ class ListaProdutoTableViewController: UITableViewController {
             produtoViewController.quantidade = quantidade
             produtoViewController.preco = preco
             produtoViewController.foto = foto
+            produtoViewController.url = url
         }
         
     }
