@@ -309,6 +309,9 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                                 <rect key="frame" x="0.0" y="550" width="190" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="botaolimpar"/>
+                                <connections>
+                                    <action selector="limpar:" destination="u2l-XZ-luA" eventType="touchUpInside" id="hdj-mU-ROO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-L0-nSw">
                                 <rect key="frame" x="20" y="285" width="339" height="30"/>
@@ -333,6 +336,11 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="FRU-Pg-1iy"/>
+                    <connections>
+                        <outlet property="email" destination="vrx-M3-3Hd" id="XQu-Fe-72C"/>
+                        <outlet property="endereco" destination="Aqp-L0-nSw" id="1GI-wx-tox"/>
+                        <outlet property="nome" destination="BXf-sB-tqh" id="6On-nz-W7X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5g-Qu-FNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -471,7 +479,11 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Preferências" id="8V2-CE-61P"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Preferências" id="8V2-CE-61P">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Zh-dg-ecu"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="comprimentoCabelo" destination="6VR-pN-WK8" id="Y1m-2p-knn"/>
                         <outlet property="corCabelo" destination="gbi-v5-hpn" id="Chm-4T-TY5"/>
@@ -558,11 +570,21 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                                 <rect key="frame" x="0.0" y="550" width="185" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="botaolimpar"/>
+                                <connections>
+                                    <action selector="limpar:" destination="WgJ-qt-I61" eventType="touchUpInside" id="7T6-2N-Vqk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Consultoria" id="3qh-Wd-aS6"/>
+                    <connections>
+                        <outlet property="assunto" destination="RNj-ik-F7f" id="B9H-XZ-UoW"/>
+                        <outlet property="cidade" destination="GMo-cX-agH" id="FCW-BU-umM"/>
+                        <outlet property="endereco" destination="eTG-pN-MsV" id="E6G-sE-abd"/>
+                        <outlet property="estado" destination="8zt-2U-phe" id="vJ6-R3-co0"/>
+                        <outlet property="mensagem" destination="Rjg-UP-fbi" id="Wh3-Gi-dBn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6c-gS-Izk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

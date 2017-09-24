@@ -13,6 +13,7 @@
 		4E320B381F12EEBE0061DB81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E320B371F12EEBE0061DB81 /* Assets.xcassets */; };
 		4E320B3B1F12EEBE0061DB81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E320B391F12EEBE0061DB81 /* LaunchScreen.storyboard */; };
 		4E6B81CA1F61E2C400E6A00E /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6B81C91F61E2C400E6A00E /* ProdutoTableViewCell.swift */; };
+		4E8A18201F7764FF002E0FC1 /* Preferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8A181F1F7764FF002E0FC1 /* Preferencias.swift */; };
 		4E8C54A91F2E795300CA4637 /* ProdutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C54A81F2E795300CA4637 /* ProdutoViewController.swift */; };
 		4E8C54AB1F2E7D1500CA4637 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C54AA1F2E7D1500CA4637 /* PerfilViewController.swift */; };
 		4E8C54AD1F2E7F0E00CA4637 /* PreferenciasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8C54AC1F2E7F0E00CA4637 /* PreferenciasViewController.swift */; };
@@ -40,6 +41,7 @@
 		4E320B3A1F12EEBE0061DB81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E320B3C1F12EEBE0061DB81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E6B81C91F61E2C400E6A00E /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
+		4E8A181F1F7764FF002E0FC1 /* Preferencias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferencias.swift; sourceTree = "<group>"; };
 		4E8C54A81F2E795300CA4637 /* ProdutoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProdutoViewController.swift; sourceTree = "<group>"; };
 		4E8C54AA1F2E7D1500CA4637 /* PerfilViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
 		4E8C54AC1F2E7F0E00CA4637 /* PreferenciasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenciasViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				ACA9E57B1F36301D0089F102 /* Produto.swift */,
 				ACA9E5791F3620010089F102 /* RatingControl.swift */,
 				ACA9E57E1F3632530089F102 /* Usuario.swift */,
+				4E8A181F1F7764FF002E0FC1 /* Preferencias.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				4EEA08061F64BDCF003FA291 /* TipoPeleDataSource.swift in Sources */,
 				ACA9E57A1F3620010089F102 /* RatingControl.swift in Sources */,
 				4E8C54AF1F2E84EC00CA4637 /* ConsultoriaViewController.swift in Sources */,
+				4E8A18201F7764FF002E0FC1 /* Preferencias.swift in Sources */,
 				4EC9F3481F257883001879A5 /* ListaProdutoTableViewController.swift in Sources */,
 				4E320B331F12EEBE0061DB81 /* ViewController.swift in Sources */,
 				4E320B311F12EEBE0061DB81 /* AppDelegate.swift in Sources */,

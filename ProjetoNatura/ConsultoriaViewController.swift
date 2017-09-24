@@ -10,6 +10,13 @@
 import UIKit
 
 class ConsultoriaViewController: UIViewController {
+    
+    
+    @IBOutlet weak var assunto: UITextField!
+    @IBOutlet weak var cidade: UITextField!
+    @IBOutlet weak var estado: UITextField!
+    @IBOutlet weak var endereco: UITextField!
+    @IBOutlet weak var mensagem: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,5 +39,14 @@ class ConsultoriaViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func limpar(_ sender: Any) {
+        assunto.text = ""
+        cidade.text = ""
+        estado.text = ""
+        endereco.text = ""
+        mensagem.text = ""
+    }
 
 }
