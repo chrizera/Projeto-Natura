@@ -17,6 +17,8 @@ class PreferenciasViewController: UIViewController{
     @IBOutlet weak var corCabelo: UIPickerView!
     @IBOutlet weak var texturaCabelo: UIPickerView!
     @IBOutlet weak var estruturaCabelo: UIPickerView!
+    @IBOutlet weak var porcentagemPele: UITextField!
+    @IBOutlet weak var porcentagemCabelo: UITextField!
     
     let tipoPeledatadelegate = TipoPeleDataSource()
     let etniasdatadelegate = EtniaDataSource()
@@ -42,12 +44,39 @@ class PreferenciasViewController: UIViewController{
         texturaCabelo.delegate = texturaCabelodatadelegate
         estruturaCabelo.dataSource = estruturaCabelodatadelegate
         estruturaCabelo.delegate = estruturaCabelodatadelegate
-        // Do any additional setup after loading the view.
+
+        porcentagemPele.isHidden = true
+        porcentagemCabelo.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBOutlet weak var switchPorcentagemPele: UISwitch!
+    
+    @IBAction func habilitarPorcentagemPele(_ sender: Any) {
+        
+        if switchPorcentagemPele.isOn {
+            porcentagemPele.isHidden = false
+
+        } else {
+            porcentagemPele.isHidden = true
+
+        }
+        
+    }
+    
+    
+    @IBOutlet weak var switchPorcentagemCabelo: UISwitch!
+    
+    @IBAction func habilitarPorcentagemCabelo(_ sender: Any) {
+        if switchPorcentagemCabelo.isOn {
+            porcentagemCabelo.isHidden = false
+        } else {
+            porcentagemCabelo.isHidden = true
+        }
     }
 
     /*
