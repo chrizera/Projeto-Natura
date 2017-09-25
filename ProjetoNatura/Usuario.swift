@@ -15,11 +15,11 @@ class Usuario {
     private var foto: UIImage?
     private var email: String
     private var nome: String
-    private var dataNascimento: String
+    private var dataNascimento: Date
     private var produtos: [Produto]
     private var preferencias: Preferencias
     
-    init(login: String, senha: String, foto: UIImage?, email: String, nome: String, dataNascimento: String, produtos: [Produto], preferencias: Preferencias) {
+    init(login: String, senha: String, foto: UIImage?, email: String, nome: String, dataNascimento: Date, produtos: [Produto], preferencias: Preferencias) {
         self.login = login
         self.senha = senha
         self.foto = foto
