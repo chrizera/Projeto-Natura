@@ -11,7 +11,15 @@
         <attribute name="tipoCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoPele" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="UsuarioCD" representedClassName="UsuarioCD" syncable="YES" codeGenerationType="class">
+        <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="PreferenciaCD" positionX="-54" positionY="-9" width="128" height="30"/>
+        <element name="UsuarioCD" positionX="-36" positionY="9" width="128" height="30"/>
     </elements>
 </model>

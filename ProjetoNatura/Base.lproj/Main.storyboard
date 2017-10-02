@@ -66,13 +66,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Não tem conta? Cadastre-se" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-0p-ajN">
-                                <rect key="frame" x="16" y="626" width="343" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login face" translatesAutoresizingMaskIntoConstraints="NO" id="srO-zy-FEd">
                                 <rect key="frame" x="89" y="496" width="198" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -88,12 +81,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPh-5E-HqF">
+                                <rect key="frame" x="103" y="617" width="169" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cadastre-se">
+                                    <color key="titleColor" red="0.97548977410000004" green="0.97752922769999995" blue="0.96976614989999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="v03-SJ-wgb" kind="show" id="1pN-MC-clR"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="115.94202898550725" y="122.28260869565219"/>
+            <point key="canvasLocation" x="114.40000000000001" y="121.88905547226388"/>
         </scene>
         <!--Lista de produtos-->
         <scene sceneID="Rfg-gh-Ent">
@@ -351,7 +355,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WKh-Nv-3jL">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="WKh-Nv-3jL">
                                 <rect key="frame" x="0.0" y="370" width="375" height="155"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="523140546.567092">
@@ -375,7 +379,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b5g-Qu-FNU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2096.8000000000002" y="914.392803598201"/>
+            <point key="canvasLocation" x="3036" y="914.392803598201"/>
         </scene>
         <!--Preferências-->
         <scene sceneID="B5d-WV-h49">
@@ -535,7 +539,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2u4-iC-UOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3909.5999999999999" y="914.392803598201"/>
+            <point key="canvasLocation" x="4848.8000000000002" y="914.392803598201"/>
         </scene>
         <!--Consultoria-->
         <scene sceneID="QaL-08-bXO">
@@ -666,6 +670,111 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
             </objects>
             <point key="canvasLocation" x="2097.1014492753625" y="164.67391304347828"/>
         </scene>
+        <!--Cadastro View Controller-->
+        <scene sceneID="2bm-Jz-KK0">
+            <objects>
+                <viewController id="v03-SJ-wgb" customClass="CadastroViewController" customModule="ProjetoNatura" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cMT-Qe-PwF"/>
+                        <viewControllerLayoutGuide type="bottom" id="zlw-f6-0di"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CPv-1P-FHu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fundo" translatesAutoresizingMaskIntoConstraints="NO" id="8cS-jX-1o5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S8n-ja-CWE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Cadastro" id="ccQ-nX-Qhq">
+                                        <barButtonItem key="backBarButtonItem" title="Voltar" id="q9P-Na-o1e"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Voltar" id="QDd-d6-0as">
+                                            <connections>
+                                                <action selector="voltar:" destination="v03-SJ-wgb" id="qnQ-Db-xH7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cadastrar" id="7JR-wU-8nc">
+                                            <connections>
+                                                <action selector="cadastrar:" destination="v03-SJ-wgb" id="ocA-aE-fbN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icone foto" translatesAutoresizingMaskIntoConstraints="NO" id="w5L-lC-Q2x">
+                                <rect key="frame" x="80" y="56" width="212" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PZ5-jn-JRl">
+                                <rect key="frame" x="16" y="199" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YKC-PR-IC8">
+                                <rect key="frame" x="16" y="251" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WQu-zC-RC5">
+                                <rect key="frame" x="16" y="302" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Ks-fG-Ngl">
+                                <rect key="frame" x="0.0" y="411" width="375" height="120"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <date key="date" timeIntervalSinceReferenceDate="528601334.10902297">
+                                    <!--2017-10-02 01:42:14 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="We3-hM-LR2">
+                                <rect key="frame" x="16" y="559" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirme a senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dN0-nN-1co">
+                                <rect key="frame" x="16" y="610" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Data de nascimento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsX-lq-eY4">
+                                <rect key="frame" x="16" y="359" width="229" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bir-WG-S0C"/>
+                    <connections>
+                        <outlet property="confirmacaoSenha" destination="dN0-nN-1co" id="yGc-Ja-6IB"/>
+                        <outlet property="dataNascimento" destination="2Ks-fG-Ngl" id="N55-FG-5qN"/>
+                        <outlet property="email" destination="WQu-zC-RC5" id="sWa-pa-rVc"/>
+                        <outlet property="login" destination="PZ5-jn-JRl" id="cPs-66-Ifl"/>
+                        <outlet property="nome" destination="YKC-PR-IC8" id="yU6-LD-Vwc"/>
+                        <outlet property="senha" destination="We3-hM-LR2" id="hyS-ht-j1a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t4r-9y-IbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114.40000000000001" y="971.96401799100454"/>
+        </scene>
         <!--Perfil-->
         <scene sceneID="5wf-Vc-Gyz">
             <objects>
@@ -683,7 +792,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCX-fA-Nfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1189.8550724637682" y="914.67391304347836"/>
+            <point key="canvasLocation" x="2128.8000000000002" y="914.392803598201"/>
         </scene>
         <!--Preferencias-->
         <scene sceneID="ISB-to-OLd">
@@ -702,7 +811,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ygh-8A-XjW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3002.898550724638" y="914.67391304347836"/>
+            <point key="canvasLocation" x="3941.5999999999999" y="914.392803598201"/>
         </scene>
         <!--Consultoria-->
         <scene sceneID="lsy-6l-hlv">

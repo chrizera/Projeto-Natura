@@ -108,7 +108,12 @@ class PreferenciasViewController: UIViewController{
         
         do {
             try context.save()
-            print("Salvo")
+            
+            let alerta = UIAlertController(title: "Parabéns!", message: "Suas informaçoes foram salvas com sucesso!", preferredStyle: .alert)
+            alerta.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
+            
+            present(alerta, animated: true, completion: nil)
+            
         } catch {
             
         }
