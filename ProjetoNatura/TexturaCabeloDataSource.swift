@@ -11,6 +11,7 @@ import UIKit
 class TexturaCabeloDataSource: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
 
     var texturasCabelo = ["Liso", "Ondulado", "Cacheado", "Crespo"]
+    var texturaCabeloSelecionada = ""
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return texturasCabelo.count
@@ -22,5 +23,9 @@ class TexturaCabeloDataSource: NSObject, UIPickerViewDelegate, UIPickerViewDataS
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return texturasCabelo[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        texturaCabeloSelecionada = texturasCabelo[row]
     }
 }

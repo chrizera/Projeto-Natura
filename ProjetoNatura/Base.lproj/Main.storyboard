@@ -512,7 +512,11 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Preferências" id="8V2-CE-61P">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Zh-dg-ecu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8Zh-dg-ecu">
+                            <connections>
+                                <action selector="salvar:" destination="lWM-bU-Rru" id="jLo-qU-sx9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

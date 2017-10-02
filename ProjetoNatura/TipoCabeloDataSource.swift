@@ -11,6 +11,7 @@ import UIKit
 class TipoCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var tiposCabelo = ["Normal", "Oleoso", "Misto", "Seco"]
+    var tipoCabeloSelecionado = ""
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return tiposCabelo.count
@@ -22,5 +23,9 @@ class TipoCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelega
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return tiposCabelo[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        tipoCabeloSelecionado = tiposCabelo[row]
     }
 }

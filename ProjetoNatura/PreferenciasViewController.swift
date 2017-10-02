@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PreferenciasViewController: UIViewController{
 
@@ -47,6 +48,8 @@ class PreferenciasViewController: UIViewController{
 
         porcentagemPele.isHidden = true
         porcentagemCabelo.isHidden = true
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -76,6 +79,74 @@ class PreferenciasViewController: UIViewController{
             porcentagemCabelo.isHidden = false
         } else {
             porcentagemCabelo.isHidden = true
+        }
+    }
+    
+    
+    @IBAction func salvar(_ sender: Any) {
+        
+        let estruturaCabeloSelecionado = estruturaCabelodatadelegate.estruturaCabeloSelecionada
+        let comprimentoCabeloSelecionado = comprimentoCabelodatadelegate.comprimentoSelecionado
+        let corCabeloSelecionado = corCabelodatadelegate.corCabeloSelecionada
+        let etniaSelecionada = etniasdatadelegate.etniaSelecionada
+        let texturaCabeloSelecionada = texturaCabelodatadelegate.texturaCabeloSelecionada
+        let tipoCabeloSelecionado = tipoCabelodatadelegate.tipoCabeloSelecionado
+        let tipoPeleSelecionada = tipoPeledatadelegate.tipoPeleSelecionada
+        
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let novaPreferencia = NSEntityDescription.insertNewObject(forEntityName: "PreferenciaCD", into: context)
+        
+        novaPreferencia.setValue(comprimentoCabeloSelecionado, forKey: "comprimentoCabelo")
+        novaPreferencia.setValue(estruturaCabeloSelecionado, forKey: "estruturaCabelo")
+        novaPreferencia.setValue(corCabeloSelecionado, forKey: "corCabelo")
+        novaPreferencia.setValue(etniaSelecionada, forKey: "etnia")
+        novaPreferencia.setValue(texturaCabeloSelecionada, forKey: "texturaCabelo")
+        novaPreferencia.setValue(tipoCabeloSelecionado, forKey: "tipoCabelo")
+        novaPreferencia.setValue(tipoPeleSelecionada, forKey: "tipoPele")
+        
+        do {
+            try context.save()
+            print("Salvo")
+        } catch {
+            
+        }
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let results = try context.fetch(request)
+            
+            if results.count > 0 {
+                for result in results as! [NSManagedObject] {
+                    if let comprimentoCabeloSalvo = result.value(forKey: "comprimentoCabelo") as? String {
+                        print(comprimentoCabeloSalvo)
+                    }
+                    if let estruturaCabeloSalvo = result.value(forKey: "estruturaCabelo") as? String {
+                        print(estruturaCabeloSalvo)
+                    }
+                    if let corCabeloSalvo = result.value(forKey: "corCabelo") as? String {
+                        print(corCabeloSalvo)
+                    }
+                    if let etniaSalva = result.value(forKey: "etnia") as? String {
+                        print(etniaSalva)
+                    }
+                    if let texturaCabeloSalvo = result.value(forKey: "texturaCabelo") as? String {
+                        print(texturaCabeloSalvo)
+                    }
+                    if let tipoCabeloSalvo = result.value(forKey: "tipoCabelo") as? String {
+                        print(tipoCabeloSalvo)
+                    }
+                    if let tipoPeleSalva = result.value(forKey: "tipoPele") as? String {
+                        print(tipoPeleSalva)
+                    }
+                }
+            }
+            
+        } catch {
+            
         }
     }
 

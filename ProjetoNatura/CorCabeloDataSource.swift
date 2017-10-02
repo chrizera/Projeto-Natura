@@ -11,6 +11,7 @@ import UIKit
 class CorCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var coresCabelo = ["Loiro natural", "Castanho natural", "Ruivo natural", "Preto natural", "Tingido loiro", "Tingido castanho", "Tingido ruivo", "Tingido preto"]
+    var corCabeloSelecionada = ""
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return coresCabelo.count
@@ -22,5 +23,9 @@ class CorCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegat
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return coresCabelo[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        corCabeloSelecionada = coresCabelo[row]
     }
 }

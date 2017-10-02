@@ -11,6 +11,7 @@ import UIKit
 class EstruturaCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewDelegate {
 
     var estruturasCabelo = ["Fino", "Médio", "Grosso", "Cachos soltos","Cachos apertados", "Cachos super apertados", "Macio", "Seco", "Sem forma"]
+    var estruturaCabeloSelecionada = ""
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return estruturasCabelo.count
@@ -22,5 +23,9 @@ class EstruturaCabeloDataSource: NSObject, UIPickerViewDataSource, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return estruturasCabelo[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        estruturaCabeloSelecionada = estruturasCabelo[row]
     }
 }
