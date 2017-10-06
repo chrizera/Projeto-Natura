@@ -26,22 +26,66 @@ class ProdutoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         nomeLabel.text = nome
         precoAvista.text = "Por R$\(preco)0 à vista"
         precoParcelado.text = "ou em 2x de R$\(preco/2)0 sem juros"
         imagemLabel.image = foto
         
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dataAtualFormatada = formatter.string(from: date)
+        
         let config = URLSessionConfiguration.default
         session = URLSession(configuration: config)
         let urlAPI = URL(string: "http://api.openweathermap.org/data/2.5/forecast?id=3448439&APPID=cfb0c23db4b87c44907fc5fbd0be1ca0")
         let task = session!.dataTask(with: urlAPI!) { (data, response, error) in
-            let texto = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print(texto!)
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
+                guard let listResultado = json["list"] as? [[String:AnyObject]] else { return }
+                for resultado in listResultado {
+
+                    guard let dataRetornada = resultado["dt_txt"] as? String else { return }
+                    let dataFormatada = dataRetornada.substring(to: dataRetornada.index(dataRetornada.startIndex, offsetBy: 10))
+                    
+                   
+//                    guard let weather = resultado["weather"] as? [[String:AnyObject]] else { return }
+                    
+//                    for temperatura in weather {
+//                        guard let temp = temperatura["main"] as? String else { return }
+//                        print(temp)
+//                    }
+//                    print(dataFormatada)
+                }
+                
+                let dataRetornadaPrimeiraPosicao = listResultado[0]["dt_txt"] as! String
+                let dataRetornadaPrimeiraPosicaoFormatada = dataRetornadaPrimeiraPosicao.substring(to: dataRetornadaPrimeiraPosicao.index(dataRetornadaPrimeiraPosicao.startIndex, offsetBy: 10))
+                print(dataRetornadaPrimeiraPosicaoFormatada)
+                
+            } catch  {
+            }
+//            let texto = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//            print(texto!)
         
         }
         task.resume()
         
+    }
+    
+    func retornarDadoJSON(data: Data, chave: String) -> String? {
+        var resposta: String?=nil
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String:AnyObject]
+            if let campo = json[chave] as? String {
+                resposta = campo
+            }
+        } catch let error as NSError {
+            return "Erro: \(error.localizedDescription)"
+        }
+        return resposta
     }
 
     override func didReceiveMemoryWarning() {
