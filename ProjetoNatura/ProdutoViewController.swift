@@ -16,6 +16,7 @@ class ProdutoViewController: UIViewController {
     var descricao = ""
     var foto: UIImage?
     var url = ""
+    var session: URLSession?
     
     @IBOutlet weak var nomeLabel: UILabel!
     @IBOutlet weak var imagemLabel: UIImageView!
@@ -29,6 +30,18 @@ class ProdutoViewController: UIViewController {
         precoAvista.text = "Por R$\(preco)0 à vista"
         precoParcelado.text = "ou em 2x de R$\(preco/2)0 sem juros"
         imagemLabel.image = foto
+        
+        
+        let config = URLSessionConfiguration.default
+        session = URLSession(configuration: config)
+        let urlAPI = URL(string: "http://api.openweathermap.org/data/2.5/forecast?id=3448439&APPID=cfb0c23db4b87c44907fc5fbd0be1ca0")
+        let task = session!.dataTask(with: urlAPI!) { (data, response, error) in
+            let texto = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print(texto!)
+        
+        }
+        task.resume()
+        
     }
 
     override func didReceiveMemoryWarning() {

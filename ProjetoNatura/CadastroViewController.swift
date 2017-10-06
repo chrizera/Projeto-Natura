@@ -32,6 +32,7 @@ class CadastroViewController: UIViewController {
     
     
     @IBAction func voltar(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 
