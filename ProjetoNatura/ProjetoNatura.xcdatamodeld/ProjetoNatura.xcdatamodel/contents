@@ -10,16 +10,19 @@
         <attribute name="texturaCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoPele" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioCD" inverseName="preferencia" inverseEntity="UsuarioCD" syncable="YES"/>
     </entity>
     <entity name="UsuarioCD" representedClassName="UsuarioCD" syncable="YES" codeGenerationType="class">
+        <attribute name="codigo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
         <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="preferencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PreferenciaCD" inverseName="usuario" inverseEntity="PreferenciaCD" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PreferenciaCD" positionX="-54" positionY="-9" width="128" height="30"/>
-        <element name="UsuarioCD" positionX="-36" positionY="9" width="128" height="30"/>
+        <element name="PreferenciaCD" positionX="-225" positionY="-90" width="128" height="193"/>
+        <element name="UsuarioCD" positionX="88" positionY="-54" width="128" height="28"/>
     </elements>
 </model>

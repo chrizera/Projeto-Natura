@@ -17,7 +17,6 @@ class ListaProdutoTableViewController: UITableViewController {
     var descricao = ""
     var foto: UIImage?
     var url = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

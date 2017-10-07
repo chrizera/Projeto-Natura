@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -56,7 +56,8 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="MFv-Fz-3JQ" kind="show" id="B0W-S2-CFB"/>
+                                    <action selector="entrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VzM-J5-Fh0"/>
+                                    <segue destination="MFv-Fz-3JQ" kind="show" identifier="loginSegue" id="B0W-S2-CFB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Esqueci minha senha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eGY-pm-wG5">
@@ -94,6 +95,10 @@
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="login" destination="1WS-ab-N3b" id="aed-Cw-ysb"/>
+                        <outlet property="senha" destination="UCq-1y-xjQ" id="QCD-mS-siK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.501700166" blue="0.065074503450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Procurar por nome ou tipo" id="uPh-bM-uBL">
-                            <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -348,7 +353,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                                     <action selector="limpar:" destination="u2l-XZ-luA" eventType="touchUpInside" id="hdj-mU-ROO"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-L0-nSw">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aqp-L0-nSw">
                                 <rect key="frame" x="20" y="285" width="339" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -384,7 +389,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
         <!--Preferências-->
         <scene sceneID="B5d-WV-h49">
             <objects>
-                <viewController storyboardIdentifier="PrefController" id="lWM-bU-Rru" customClass="PreferenciasViewController" customModule="ProjetoNatura" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lWM-bU-Rru" customClass="PreferenciasViewController" customModule="ProjetoNatura" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jVb-Rx-YcF"/>
                         <viewControllerLayoutGuide type="bottom" id="oWn-07-LkQ"/>
@@ -486,7 +491,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" backgroundImage="entrar em contato consultora2-2"/>
                                 <connections>
-                                    <segue destination="WgJ-qt-I61" kind="show" id="EPK-F9-GYb"/>
+                                    <segue destination="WgJ-qt-I61" kind="show" identifier="" id="EPK-F9-GYb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Etnia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsV-J8-yt3">

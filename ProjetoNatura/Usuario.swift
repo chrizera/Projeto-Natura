@@ -18,6 +18,7 @@ class Usuario {
     private var dataNascimento: Date
     private var produtos: [Produto]
     private var preferencias: Preferencias
+    private var codigo: Int?
     
     init(login: String, senha: String, foto: UIImage?, email: String, nome: String, dataNascimento: Date, produtos: [Produto], preferencias: Preferencias) {
         self.login = login
@@ -29,4 +30,6 @@ class Usuario {
         self.produtos = produtos
         self.preferencias = preferencias
     }
+    
+    
 }
