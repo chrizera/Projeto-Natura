@@ -16,20 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let context = appDelegate.persistentContainer.viewContext
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
-//        request.returnsObjectsAsFaults = false
-//        
-//        do {
-//            let results = try context.fetch(request)
-//            print(results)
-//        } catch {
-//            
-//        }
-        
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,28 +33,15 @@ class LoginViewController: UIViewController {
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UsuarioCD")
         request.returnsObjectsAsFaults = false
-//        request.predicate = NSPredicate(format: "login = %@", loginDigitado!)
+        request.predicate = NSPredicate(format: "login = %@", loginDigitado!)
         
         do {
             
-            var logins = [String]()
-            var senhas = [String]()
-            
-            let results = try context.fetch(request) //as! [Usuario]
-//            print(results[0].login)
+            let results = try context.fetch(request) as! [UsuarioCD]
             
             if results.count > 0 {
-                for result in results as! [NSManagedObject] {
-                    guard let loginCadastrado = result.value(forKey: "login") as? String else { return }
-                    guard let senhaCadastrada = result.value(forKey: "senha") as? String else { return }
-                    
-                    
-                    logins.append(loginCadastrado)
-                    senhas.append(senhaCadastrada)
-                    
-                }
                 
-                if logins.contains(loginDigitado!) && senhas.contains(senhaDigitada!) {
+                if results[0].login!.contains(loginDigitado!) && results[0].senha!.contains(senhaDigitada!) {
                     performSegue(withIdentifier: "loginSegue", sender: nil)
                 } else {
                     let alerta = UIAlertController(title: "Atencao!", message: "Usuario ou senha invalidos", preferredStyle: .alert)
@@ -75,6 +49,11 @@ class LoginViewController: UIViewController {
                     
                     present(alerta, animated: true, completion: nil)
                 }
+            } else {
+                let alerta = UIAlertController(title: "Atencao!", message: "Usuario ou senha invalidos", preferredStyle: .alert)
+                alerta.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
+                
+                present(alerta, animated: true, completion: nil)
             }
             
         } catch {

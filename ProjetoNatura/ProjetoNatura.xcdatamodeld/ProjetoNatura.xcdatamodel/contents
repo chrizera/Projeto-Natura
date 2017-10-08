@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PreferenciaCD" representedClassName=".Preferencias" syncable="YES">
+    <entity name="PreferenciaCD" representedClassName=".PreferenciaCD" syncable="YES">
         <attribute name="comprimentoCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="corCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="estruturaCabelo" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,7 +12,7 @@
         <attribute name="tipoPele" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioCD" inverseName="preferencia" inverseEntity="UsuarioCD" syncable="YES"/>
     </entity>
-    <entity name="ProdutoCD" representedClassName=".Produto" syncable="YES">
+    <entity name="ProdutoCD" representedClassName=".ProdutoCD" syncable="YES">
         <attribute name="classificacao" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
