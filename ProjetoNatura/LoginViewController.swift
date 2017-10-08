@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var senha: UITextField!
+    var usuario = UsuarioCD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class LoginViewController: UIViewController {
         do {
             
             let results = try context.fetch(request) as! [UsuarioCD]
-            
+            self.usuario = results[0]
             if results.count > 0 {
                 
                 if results[0].login!.contains(loginDigitado!) && results[0].senha!.contains(senhaDigitada!) {
@@ -62,14 +63,20 @@ class LoginViewController: UIViewController {
         
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let tbc = segue.destination as! UITabBarController
+        let nc = tbc.viewControllers![3] as! UINavigationController
+        print("CONTROLLER \(nc.topViewController!)")
+        let vc = nc.viewControllers[0] as! PreferenciasViewController
+        print("CONTROLLER \(nc.viewControllers[0])")
+        vc.loginRecebido = usuario.login!
     }
-    */
+ 
 
 }

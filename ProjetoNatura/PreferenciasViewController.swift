@@ -29,6 +29,9 @@ class PreferenciasViewController: UIViewController{
     let texturaCabelodatadelegate = TexturaCabeloDataSource()
     let estruturaCabelodatadelegate = EstruturaCabeloDataSource()
     
+    var loginRecebido = ""
+    var usuario = UsuarioCD()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tipoPele.dataSource = tipoPeledatadelegate
@@ -49,6 +52,25 @@ class PreferenciasViewController: UIViewController{
         porcentagemPele.isHidden = true
         porcentagemCabelo.isHidden = true
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UsuarioCD")
+        request.predicate = NSPredicate(format: "login = %@", loginRecebido)
+        request.returnsObjectsAsFaults = false
+        
+        print("LOGIN: \(loginRecebido)")
+        print("SELF VC \(self)")
+        
+        do {
+            
+            let results = try context.fetch(request) as! [UsuarioCD]
+            if results.count > 0 {
+            usuario = results[0]
+            print(usuario.preferencia!.comprimentoCabelo!)
+            }
+        } catch {
+            
+        }
         
     }
     
@@ -60,6 +82,7 @@ class PreferenciasViewController: UIViewController{
     @IBOutlet weak var switchPorcentagemPele: UISwitch!
     
     @IBAction func habilitarPorcentagemPele(_ sender: Any) {
+        print(usuario.nome!)
         
         if switchPorcentagemPele.isOn {
             porcentagemPele.isHidden = false
@@ -107,12 +130,13 @@ class PreferenciasViewController: UIViewController{
         novaPreferencia.setValue(tipoPeleSelecionada, forKey: "tipoPele")
         
         do {
+            usuario.preferencia = novaPreferencia as? PreferenciaCD
             try context.save()
-            
             let alerta = UIAlertController(title: "Parabéns!", message: "Suas informaçoes foram salvas com sucesso!", preferredStyle: .alert)
             alerta.addAction(UIAlertAction(title: "Fechar", style: .default, handler: nil))
             
             present(alerta, animated: true, completion: nil)
+            
             
         } catch {
             
