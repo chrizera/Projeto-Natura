@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16A323" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="PreferenciaCD" representedClassName="PreferenciaCD" syncable="YES" codeGenerationType="class">
+    <entity name="PreferenciaCD" representedClassName=".Preferencias" syncable="YES">
         <attribute name="comprimentoCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="corCabelo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="estruturaCabelo" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,17 +12,27 @@
         <attribute name="tipoPele" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioCD" inverseName="preferencia" inverseEntity="UsuarioCD" syncable="YES"/>
     </entity>
-    <entity name="UsuarioCD" representedClassName="UsuarioCD" syncable="YES" codeGenerationType="class">
-        <attribute name="codigo" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
+    <entity name="ProdutoCD" representedClassName=".Produto" syncable="YES">
+        <attribute name="classificacao" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="preco" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="usuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioCD" inverseName="produto" inverseEntity="UsuarioCD" syncable="YES"/>
+    </entity>
+    <entity name="UsuarioCD" representedClassName=".UsuarioCD" syncable="YES">
         <attribute name="dataNascimento" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="preferencia" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PreferenciaCD" inverseName="usuario" inverseEntity="PreferenciaCD" syncable="YES"/>
+        <relationship name="produto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProdutoCD" inverseName="usuario" inverseEntity="ProdutoCD" syncable="YES"/>
     </entity>
     <elements>
         <element name="PreferenciaCD" positionX="-225" positionY="-90" width="128" height="193"/>
-        <element name="UsuarioCD" positionX="88" positionY="-54" width="128" height="28"/>
+        <element name="ProdutoCD" positionX="-9" positionY="-27" width="128" height="148"/>
+        <element name="UsuarioCD" positionX="88" positionY="-54" width="128" height="148"/>
     </elements>
 </model>

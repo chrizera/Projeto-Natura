@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class Produto {
 
-    var nome: String
-    var classificacao: Int
-    var quantidade: Int
-    var preco: Double
+    var codigo: Int?
+    public var nome: String
+    public var classificacao: Int
+    public var quantidade: Int
+    public var preco: Double
     var foto: UIImage?
-    var descricao: String
-    var link: String
+    public var descricao: String
+    public var link: String
     
     init(nome: String, classificacao: Int, quantidade: Int, preco: Double, foto: UIImage?, descricao: String, link: String) {
         self.nome = nome
@@ -27,5 +29,4 @@ class Produto {
         self.descricao = descricao
         self.link = link
     }
-    
 }

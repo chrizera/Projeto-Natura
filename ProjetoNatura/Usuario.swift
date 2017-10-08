@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 class Usuario {
     
-    private var login: String
+    public var login: String
     private var senha: String
     private var foto: UIImage?
     private var email: String
     private var nome: String
     private var dataNascimento: Date
-    private var produtos: [Produto]
-    private var preferencias: Preferencias
+    private var produtos: [Produto]?
+    private var preferencias: Preferencias?
     private var codigo: Int?
     
     init(login: String, senha: String, foto: UIImage?, email: String, nome: String, dataNascimento: Date, produtos: [Produto], preferencias: Preferencias) {
@@ -30,6 +31,5 @@ class Usuario {
         self.produtos = produtos
         self.preferencias = preferencias
     }
-    
     
 }

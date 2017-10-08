@@ -198,6 +198,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
                     <navigationItem key="navigationItem" title="Lista de produtos" id="IFA-9f-GFg"/>
                     <connections>
                         <segue destination="VAz-5D-4xV" kind="show" identifier="ListaProdutoParaProdutoSegue" id="a0W-Ey-Rx3"/>
+                        <segue destination="lWM-bU-Rru" kind="show" identifier="listaParaPreferenciaSegue" id="34Z-sh-XuB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1j-JJ-I6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -857,6 +858,7 @@ Recomendado para: Mulheres a partir dos 30 anos.</string>
         <image name="produto1" width="390" height="340"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="34Z-sh-XuB"/>
         <segue reference="EPK-F9-GYb"/>
     </inferredMetricsTieBreakers>
 </document>

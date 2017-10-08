@@ -35,15 +35,14 @@ class ListaProdutoTableViewController: UITableViewController {
         produtos.append(produto5)
         produtos.append(produto6)
         
-//        let alerta = UIAlertController(title: "Atenção!", message: "Clique no menu PREFERÊNCIAS para saber quais são os produtos exclusivos para você!", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Descobrir", style: .default, handler: {
-//        (action) -> Void in
-//            let preferenciasViewController = self.storyboard?.instantiateViewController(withIdentifier: "PrefController")
-//            self.present(preferenciasViewController!, animated: true, completion: nil)
-//        })
-//        alerta.addAction(action)
-//        
-//        present(alerta, animated: true, completion: nil)
+        let alerta = UIAlertController(title: "Atenção!", message: "Clique no menu PREFERÊNCIAS para saber quais são os produtos exclusivos para você!", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Descobrir", style: .default, handler: {
+        (action) -> Void in
+            self.performSegue(withIdentifier: "listaParaPreferenciaSegue", sender: nil)
+        })
+        alerta.addAction(action)
+        
+        present(alerta, animated: true, completion: nil)
 
     }
 

@@ -17,6 +17,18 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
+//        request.returnsObjectsAsFaults = false
+//        
+//        do {
+//            let results = try context.fetch(request)
+//            print(results)
+//        } catch {
+//            
+//        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -29,17 +41,20 @@ class LoginViewController: UIViewController {
         
         let loginDigitado = login.text
         let senhaDigitada = senha.text
-        
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UsuarioCD")
         request.returnsObjectsAsFaults = false
+//        request.predicate = NSPredicate(format: "login = %@", loginDigitado!)
         
         do {
             
             var logins = [String]()
             var senhas = [String]()
-            let results = try context.fetch(request)
+            
+            let results = try context.fetch(request) //as! [Usuario]
+//            print(results[0].login)
             
             if results.count > 0 {
                 for result in results as! [NSManagedObject] {

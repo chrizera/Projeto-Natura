@@ -118,41 +118,41 @@ class PreferenciasViewController: UIViewController{
             
         }
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
-        request.returnsObjectsAsFaults = false
-        
-        do {
-            let results = try context.fetch(request)
-            
-            if results.count > 0 {
-                for result in results as! [NSManagedObject] {
-                    if let comprimentoCabeloSalvo = result.value(forKey: "comprimentoCabelo") as? String {
-                        print(comprimentoCabeloSalvo)
-                    }
-                    if let estruturaCabeloSalvo = result.value(forKey: "estruturaCabelo") as? String {
-                        print(estruturaCabeloSalvo)
-                    }
-                    if let corCabeloSalvo = result.value(forKey: "corCabelo") as? String {
-                        print(corCabeloSalvo)
-                    }
-                    if let etniaSalva = result.value(forKey: "etnia") as? String {
-                        print(etniaSalva)
-                    }
-                    if let texturaCabeloSalvo = result.value(forKey: "texturaCabelo") as? String {
-                        print(texturaCabeloSalvo)
-                    }
-                    if let tipoCabeloSalvo = result.value(forKey: "tipoCabelo") as? String {
-                        print(tipoCabeloSalvo)
-                    }
-                    if let tipoPeleSalva = result.value(forKey: "tipoPele") as? String {
-                        print(tipoPeleSalva)
-                    }
-                }
-            }
-            
-        } catch {
-            
-        }
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
+//        request.returnsObjectsAsFaults = false
+//        
+//        do {
+//            let results = try context.fetch(request)
+//            
+//            if results.count > 0 {
+//                for result in results as! [NSManagedObject] {
+//                    if let comprimentoCabeloSalvo = result.value(forKey: "comprimentoCabelo") as? String {
+//                        print(comprimentoCabeloSalvo)
+//                    }
+//                    if let estruturaCabeloSalvo = result.value(forKey: "estruturaCabelo") as? String {
+//                        print(estruturaCabeloSalvo)
+//                    }
+//                    if let corCabeloSalvo = result.value(forKey: "corCabelo") as? String {
+//                        print(corCabeloSalvo)
+//                    }
+//                    if let etniaSalva = result.value(forKey: "etnia") as? String {
+//                        print(etniaSalva)
+//                    }
+//                    if let texturaCabeloSalvo = result.value(forKey: "texturaCabelo") as? String {
+//                        print(texturaCabeloSalvo)
+//                    }
+//                    if let tipoCabeloSalvo = result.value(forKey: "tipoCabelo") as? String {
+//                        print(tipoCabeloSalvo)
+//                    }
+//                    if let tipoPeleSalva = result.value(forKey: "tipoPele") as? String {
+//                        print(tipoPeleSalva)
+//                    }
+//                }
+//            }
+//            
+//        } catch {
+//            
+//        }
     }
 
     /*
