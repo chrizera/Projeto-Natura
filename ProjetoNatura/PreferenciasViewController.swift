@@ -30,7 +30,7 @@ class PreferenciasViewController: UIViewController{
     let estruturaCabelodatadelegate = EstruturaCabeloDataSource()
     
     var loginRecebido = ""
-    var usuario = UsuarioCD()
+    var usuario: UsuarioCD?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,15 +58,12 @@ class PreferenciasViewController: UIViewController{
         request.predicate = NSPredicate(format: "login = %@", loginRecebido)
         request.returnsObjectsAsFaults = false
         
-        print("LOGIN: \(loginRecebido)")
-        print("SELF VC \(self)")
-        
         do {
             
             let results = try context.fetch(request) as! [UsuarioCD]
             if results.count > 0 {
             usuario = results[0]
-            print(usuario.preferencia!.comprimentoCabelo!)
+
             }
         } catch {
             
@@ -82,7 +79,6 @@ class PreferenciasViewController: UIViewController{
     @IBOutlet weak var switchPorcentagemPele: UISwitch!
     
     @IBAction func habilitarPorcentagemPele(_ sender: Any) {
-        print(usuario.nome!)
         
         if switchPorcentagemPele.isOn {
             porcentagemPele.isHidden = false
@@ -129,6 +125,8 @@ class PreferenciasViewController: UIViewController{
         novaPreferencia.setValue(tipoCabeloSelecionado, forKey: "tipoCabelo")
         novaPreferencia.setValue(tipoPeleSelecionada, forKey: "tipoPele")
         
+        guard let usuario = self.usuario else { return }
+        
         do {
             usuario.preferencia = novaPreferencia as? PreferenciaCD
             try context.save()
@@ -141,42 +139,6 @@ class PreferenciasViewController: UIViewController{
         } catch {
             
         }
-        
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "PreferenciaCD")
-//        request.returnsObjectsAsFaults = false
-//        
-//        do {
-//            let results = try context.fetch(request)
-//            
-//            if results.count > 0 {
-//                for result in results as! [NSManagedObject] {
-//                    if let comprimentoCabeloSalvo = result.value(forKey: "comprimentoCabelo") as? String {
-//                        print(comprimentoCabeloSalvo)
-//                    }
-//                    if let estruturaCabeloSalvo = result.value(forKey: "estruturaCabelo") as? String {
-//                        print(estruturaCabeloSalvo)
-//                    }
-//                    if let corCabeloSalvo = result.value(forKey: "corCabelo") as? String {
-//                        print(corCabeloSalvo)
-//                    }
-//                    if let etniaSalva = result.value(forKey: "etnia") as? String {
-//                        print(etniaSalva)
-//                    }
-//                    if let texturaCabeloSalvo = result.value(forKey: "texturaCabelo") as? String {
-//                        print(texturaCabeloSalvo)
-//                    }
-//                    if let tipoCabeloSalvo = result.value(forKey: "tipoCabelo") as? String {
-//                        print(tipoCabeloSalvo)
-//                    }
-//                    if let tipoPeleSalva = result.value(forKey: "tipoPele") as? String {
-//                        print(tipoPeleSalva)
-//                    }
-//                }
-//            }
-//            
-//        } catch {
-//            
-//        }
     }
 
     /*

@@ -95,6 +95,56 @@ class ListaProdutoTableViewController: UITableViewController {
        performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
     }
     
+    var loginRecebido = ""
+    var usuario: UsuarioCD?
+    var session: URLSession?
+
+    override func viewDidAppear(_ animated: Bool) {
+
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dataAtualFormatada = formatter.string(from: date)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "UsuarioCD")
+        request.predicate = NSPredicate(format: "login = %@", loginRecebido)
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            
+            let results = try context.fetch(request) as! [UsuarioCD]
+            if results.count > 0 {
+               self.usuario = results[0]
+            }
+        } catch {
+            
+        }
+        
+        let config = URLSessionConfiguration.default
+        session = URLSession(configuration: config)
+        let urlAPI = URL(string: "http://api.openweathermap.org/data/2.5/forecast?id=3448439&APPID=cfb0c23db4b87c44907fc5fbd0be1ca0")
+        
+        let task = session!.dataTask(with: urlAPI!) { (data, response, error) in
+            
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:AnyObject]
+                guard let listResultado = json["list"] as? [[String:AnyObject]] else { return }
+                guard let arrayTemperaturas = listResultado[0]["weather"] as? [[String:AnyObject]] else { return }
+                guard let descricaoTempoHoje = arrayTemperaturas[0]["main"] as? String else { return }
+
+                let dataRetornadaPrimeiraPosicao = listResultado[0]["dt_txt"] as! String
+                let dataRetornadaPrimeiraPosicaoFormatada = dataRetornadaPrimeiraPosicao.substring(to: dataRetornadaPrimeiraPosicao.index(dataRetornadaPrimeiraPosicao.startIndex, offsetBy: 10))
+                
+                
+            } catch  {
+            }
+        }
+        task.resume()
+
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -112,6 +162,5 @@ class ListaProdutoTableViewController: UITableViewController {
         }
         
     }
-    
 
 }
