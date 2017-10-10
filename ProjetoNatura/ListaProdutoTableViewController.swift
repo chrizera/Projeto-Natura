@@ -133,16 +133,88 @@ class ListaProdutoTableViewController: UITableViewController {
                 guard let listResultado = json["list"] as? [[String:AnyObject]] else { return }
                 guard let arrayTemperaturas = listResultado[0]["weather"] as? [[String:AnyObject]] else { return }
                 guard let descricaoTempoHoje = arrayTemperaturas[0]["main"] as? String else { return }
-
+                print("TEMPO HOJE:::::: \(descricaoTempoHoje)")
                 let dataRetornadaPrimeiraPosicao = listResultado[0]["dt_txt"] as! String
                 let dataRetornadaPrimeiraPosicaoFormatada = dataRetornadaPrimeiraPosicao.substring(to: dataRetornadaPrimeiraPosicao.index(dataRetornadaPrimeiraPosicao.startIndex, offsetBy: 10))
                 
                 
+                if self.usuario!.preferencia != nil {
+                    if (self.usuario!.preferencia!.tipoPele!.contains("Seca")) {
+                        let alerta = UIAlertController(title: "Indicação Look Perfeito", message: "O melhor produto para você em dias de \(descricaoTempoHoje) é o Gel Creme Antissinais 30", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Clique aqui para comprar", style: .default, handler: {
+                            (action) -> Void in
+                            
+                            self.nome = self.produtos[0].nome
+                            self.descricao = self.produtos[0].descricao
+                            self.quantidade = self.produtos[0].quantidade
+                            self.preco = self.produtos[0].preco
+                            self.foto = self.produtos[0].foto
+                            self.url = self.produtos[0].link
+                            
+                            self.performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
+                        })
+                        alerta.addAction(action)
+                        
+                        self.present(alerta, animated: true, completion: nil)
+                    } else if (self.usuario!.preferencia!.tipoPele!.contains("Oleosa")) {
+                        let alerta = UIAlertController(title: "Indicação Look Perfeito", message: "O melhor produto para você em dias de \(descricaoTempoHoje) é o Tônico Detox adstringente Chronos", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Clique aqui para comprar", style: .default, handler: {
+                            (action) -> Void in
+                            
+                            self.nome = self.produtos[1].nome
+                            self.descricao = self.produtos[1].descricao
+                            self.quantidade = self.produtos[1].quantidade
+                            self.preco = self.produtos[1].preco
+                            self.foto = self.produtos[1].foto
+                            self.url = self.produtos[1].link
+                            
+                            self.performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
+                        })
+                        alerta.addAction(action)
+                        
+                        self.present(alerta, animated: true, completion: nil)
+                    } else if self.usuario!.preferencia!.corCabelo!.contains("Castanho natural") || self.usuario!.preferencia!.corCabelo!.contains("Ruivo natural") || self.usuario!.preferencia!.corCabelo!.contains("Loiro natural") || self.usuario!.preferencia!.corCabelo!.contains("Preto natural") || self.usuario!.preferencia!.corCabelo!.contains("Tingido castanho")
+                    || self.usuario!.preferencia!.corCabelo!.contains("Tingido preto"){
+                        let alerta = UIAlertController(title: "Indicação Look Perfeito", message: "O melhor produto para seus cabelos em dias de \(descricaoTempoHoje) é o Shampoo Nutrição e Brilho Plant", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Clique aqui para comprar", style: .default, handler: {
+                            (action) -> Void in
+                            
+                            self.nome = self.produtos[4].nome
+                            self.descricao = self.produtos[4].descricao
+                            self.quantidade = self.produtos[4].quantidade
+                            self.preco = self.produtos[4].preco
+                            self.foto = self.produtos[4].foto
+                            self.url = self.produtos[4].link
+                            
+                            self.performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
+                        })
+                        alerta.addAction(action)
+                        self.present(alerta, animated: true, completion: nil)
+                    } else if self.usuario!.preferencia!.corCabelo!.contains("Tingido loiro") || self.usuario!.preferencia!.corCabelo!.contains("Tingido ruivo"){
+                        let alerta = UIAlertController(title: "Indicação Look Perfeito", message: "O melhor produto para seus cabelos em dias de \(descricaoTempoHoje) é o Shampoo Hidratação Reparadora Plant", preferredStyle: .alert)
+                        let action = UIAlertAction(title: "Clique aqui para comprar", style: .default, handler: {
+                            (action) -> Void in
+                            
+                            self.nome = self.produtos[3].nome
+                            self.descricao = self.produtos[3].descricao
+                            self.quantidade = self.produtos[3].quantidade
+                            self.preco = self.produtos[3].preco
+                            self.foto = self.produtos[3].foto
+                            self.url = self.produtos[3].link
+                            
+                            self.performSegue(withIdentifier: "ListaProdutoParaProdutoSegue", sender: nil)
+                        })
+                        alerta.addAction(action)
+                        self.present(alerta, animated: true, completion: nil)
+                    }
+                }
+                
+                
+                print("DATA DA PRIMEIRA POSICAO DO VETOR:::::: \(dataRetornadaPrimeiraPosicaoFormatada)")
             } catch  {
             }
         }
         task.resume()
-
     }
     
     // MARK: - Navigation
